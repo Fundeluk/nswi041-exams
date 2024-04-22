@@ -26,11 +26,13 @@ This section specifies the functional requirements.
 
 #### Actors
 
-[*Document here all actors from the use case diagrams. Make a subsection for each actor and their short description in each subsection.*]
+##### Student
 
-##### [*Actor name*]
+The student actor represents an individual enrolled in courses and participating in exams within the educational system.
 
-[*Actor description*]
+##### Teacher
+
+The teacher actor represents an instructor or educator who conducts classes, administers exams, and provides feedback within the educational system.
 
 #### Use cases
 
