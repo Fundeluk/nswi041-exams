@@ -34,13 +34,7 @@ The student actor represents an individual enrolled in courses and participating
 
 The teacher actor represents an instructor or educator who conducts classes, administers exams, and provides feedback within the educational system.
 
-#### Use cases
-
-[*Document here all use cases. Create a subsection for each use case diagram. If you have only one use case diagram, you do not need a special subsection.*]
-
-##### [*Use case diagram title*]
-
-[*Use case diagram in PlantUML*]
+##### Results and exams
 
 ```plantuml
 @startuml
