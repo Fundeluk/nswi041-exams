@@ -89,6 +89,7 @@ To be able to embed PlantUML diagrams to Markdown code with previews in VSCode y
 View > Command Pallete... > Markdown All in One: Print current document to HTML
 
 Follow https://plantuml.com/
+This diagram provides a clear overview of the interactions and functionalities within the educational system from the perspective of both students and teachers. 
 
 [*Describe the diagram in a short paragraph. Describe each use case from the diagram in the detail from the lecture in a separate subsection.*]
 
@@ -104,11 +105,40 @@ Follow https://plantuml.com/
 
 ```plantuml
 @startuml
-class Car
+class Exam {
+  String name
+  String courseCode
+  DateTime examDate
+}
 
-Driver - Car : drives >
-Car *- Wheel : have 4 >
-Car -- Person : < owns
+class Credit {
+
+}
+
+class Result {
+  String grade
+  String feedback
+}
+
+class Student {
+  String studentId
+  String name
+  List<Credit> creditsEarned
+  Map<Exam, Result> examResults
+}
+
+class Teacher {
+  String teacherId
+  String name
+  List<Exam> examsTeaching
+}
+
+Exam "1" -- "" Credit : to enroll for <
+Credit "1" -- "" Student : is required to have <
+Exam "1" -- "*" Result : produces >
+Result "1" -- "1" Student : is received by >
+Exam "1" -- "1" Teacher : gives <
+Result "1" -- "1" Teacher : approves <
 @enduml
 ```
 
