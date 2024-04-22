@@ -87,6 +87,10 @@ View > Command Pallete... > Markdown All in One: Print current document to HTML
 Follow https://plantuml.com/
 This diagram provides a clear overview of the interactions and functionalities within the educational system from the perspective of both students and teachers. 
 
+#### Overview
+
+This UML diagram offers a comprehensive depiction of the interactions and functionalities within an educational system, providing insight from both the perspective of students and teachers. By illustrating various actors, including students and teachers, along with their respective roles and interactions with the system, this diagram serves as a valuable tool for understanding the dynamics of educational processes.
+
 [*Describe the diagram in a short paragraph. Describe each use case from the diagram in the detail from the lecture in a separate subsection.*]
 
 ###### [*Use case title*]
