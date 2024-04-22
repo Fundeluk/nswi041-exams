@@ -103,3 +103,38 @@ Teach this course
 Selected date,time&place is not booked
 #### Postrequirement:
 Have the ability to change the time,date&place
+
+### Publish Result
+
+#### Detail:
+Happy path - The teacher efficiently publishes the exam results into the system, which then become immediately available for students to view.
+
+#### Alternatives:
+- The publishing process encounters a technical error, delaying the availability of results.
+- The teacher mistakenly publishes incomplete or incorrect results and needs to retract or amend them.
+
+#### Prerequirements:
+- The teacher has access to the system with rights to publish results.
+- The exams have been graded and the results finalized.
+
+#### Postrequirements:
+- Students are able to view their exam results as soon as they are published.
+- Notifications might be sent to students alerting them of newly published results.
+
+### Kick Student Out
+
+#### Detail:
+Happy path - The teacher uses the system to automatically unenroll students who have not fulfilled the prerequisite criteria (e.g., requisite credits) for the exam.
+
+#### Alternatives:
+- The system fails to identify and remove a student who hasn't met the prerequisites.
+- A student is mistakenly removed due to incorrect data regarding their prerequisites.
+
+#### Prerequirements:
+- The student is currently enrolled in an exam for which they do not meet the necessary criteria.
+- The teacher has the appropriate system permissions to manage enrollments and remove students.
+
+#### Postrequirements:
+- The student is no longer enrolled in the exam.
+- The student and teacher receive notifications about the change in enrollment status.
+- The system logs the action for auditing purposes.
