@@ -13,8 +13,6 @@ usecase "Kick student out" as KSO1
 usecase "Publish result" as PR
 usecase "Make/create exam date" as MED
 usecase "Change exam date&time" as CED
-usecase "Not pass exam" as NPE
-usecase "Pass exam" as PE
  
 s --> GC1
 s --> QWL1
@@ -22,17 +20,13 @@ s --> VEC1
 s --> FE1
 s --> VER1
 s --> SO1
+s --> SI
 
-VER1 --> NPE
-VER1 --> PE
-GC1 --> SI : <<extend>>
-VEC1 --> SI : <<include>>
-FE1 --> SI : <<include>>
-QWL1 --> SI : <<extend>>
-PR --> VER1 : <<include>>
-MED --> CED : <<extend>>
+QWL1 --> SI : <<include>>
+SI --> VEC1 : <<extend>>
 
 t --> KSO1
 t --> PR
 t --> MED
+t --> CED
 @enduml
