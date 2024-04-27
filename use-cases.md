@@ -3,25 +3,25 @@
 ### Queue:
 
 **Happy Path:**
-1.The student loggs into their account. 
-2.The system displays the home page.
-3.The student clicks on the icon to sign up for exams.
-4.The system presents a list of upcoming exams with filtering options.
-5.The student selects an exam with full capacity to enroll in. 
-6.The system places the student in the waiting queue.
+1. The student loggs into their account. 
+2. The system displays the home page.
+3. The student clicks on the icon to sign up for exams.
+4. The system presents a list of upcoming exams with filtering options.
+5. The student selects an exam with full capacity to enroll in. 
+6. The system places the student in the waiting queue.
 
 **Potential Issues:**
--In step 1, the student encounters difficulty logging into the system.
--In step 4, no exams are available for enrollment. 
--In step 6, the deadline for enrolling in the exam has passed.
--In step 6, the exam's capacity is not full, so the system automatically enrolls the student.
--In step 6, the student cannot enroll in the waiting queue due to unfulfilled exam requirements.
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, no exams are available for enrollment. 
+- In step 6, the deadline for enrolling in the exam has passed.
+- In step 6, the exam's capacity is not full, so the system automatically enrolls the student.
+- In step 6, the student cannot enroll in the waiting queue due to unfulfilled exam requirements.
 
 **Preconditions:**
--The selected exam has reached full capacity.
--Enrollment for the exam is still open.
+- The selected exam has reached full capacity.
+- Enrollment for the exam is still open.
 **Postconditions:**
--The student can view their position in the queue.
+- The student can view their position in the queue.
 
 ### Enroll for Exam:
 
