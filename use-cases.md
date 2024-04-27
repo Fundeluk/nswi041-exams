@@ -2,31 +2,50 @@
 
 ### Queue:
 
-#### Detail:
-Happy path - The student is waiting in the queue until vacancy occurs. Then is automatically enrolled on the exam and given a specific time. 
-#### Alternatives: 
-The student will not be able to enrolled for the exam because the capacity is full.
-The student is not able to get to the queue because the student has not fullfilled the requirements for enrolling for the exam.
-#### Prerequirements:
-The capacity is full.
-It is still possible to enroll for the exam.
-#### Postrequirement
-To be able to see position in the queue. 
+#### Happy path:
+1.The student loggs into their account. 
+2.The system displays the home page.
+3.The student clicks on the icon to sign up for exams.
+4.The system presents a list of upcoming exams with filtering options.
+5.The student selects an exam with full capacity to enroll in. 
+6.The system places the student in the waiting queue.
+
+#### Potential issues:
+-In step 1, the student encounters difficulty logging into the system.
+-In step 4, no exams are available for enrollment. 
+-In step 6, the deadline for enrolling in the exam has passed.
+-In step 6, the exam's capacity is not full, so the system automatically enrolls the student.
+-In step 6, the student cannot enroll in the waiting queue due to unfulfilled exam requirements.
+
+#### Preconditions:
+-The selected exam has reached full capacity.
+-Enrollment for the exam is still open.
+#### Postconditions:
+-The student can view their position in the queue.
 
 ### Enroll for exam:
 
-#### Detail:
-Happy path - Student is enrolling for a specific date and subject.
-#### Alternatives: 
-Can happen that there is no way to get enrolled for the specific date or time.
-The term can be full.
-There is no term that the student will be satisfied with
-#### Prerequirements:
-To have credit for this subject
-The term is opened for enrolling
-There is a term that is opened and is not full
-#### Postrequirements:
-To be succesfully enrolled to the term
+#### Happy path:
+1.The student loggs into their account. 
+2.The system displays the home page.
+3.The student clicks on the icon to sign up for exams.
+4.The system presents a list of upcoming exams with filtering options.
+5.The student selects an exam with specific date to enroll in.
+6.The system confirms the student's enrollment in the exam and assigns them a time slot. 
+
+#### Potential issues:
+-In step 1, the student encounters difficulty logging into the system.
+-In step 4, no exams are available for enrollment. 
+-In step 5, there are no suitable exam dates for the student.
+-In step 6, the deadline for enrolling in the exam has passed.
+-In step 6, the exam's capacity is full, so the system automatically places the student on the waiting queue.
+-In step 6, the student cannot enroll in the exam due to unfulfilled exam requirements.
+
+#### Preconditions:
+-The student has the necessary credit for the subject.
+-Enrollment for the exam is still open and has available spots.
+#### Postconditions:
+-The student is successfully enrolled in the exam fot the selected term.
 
 ### Get credit:
 
