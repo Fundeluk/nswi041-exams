@@ -23,29 +23,31 @@
 #### Postconditions:
 -The student can view their position in the queue.
 
-### Enroll for exam:
+## Enroll for Exam:
 
-#### Happy path:
-1.The student loggs into their account. 
-2.The system displays the home page.
-3.The student clicks on the icon to sign up for exams.
-4.The system presents a list of upcoming exams with filtering options.
-5.The student selects an exam with specific date to enroll in.
-6.The system confirms the student's enrollment in the exam and assigns them a time slot. 
+**Happy Path:**
+1. The student logs into their account.
+2. The system displays the home page.
+3. The student clicks on the icon to sign up for exams.
+4. The system presents a list of upcoming exams with filtering options.
+5. The student selects an exam with a specific date to enroll in.
+6. The system confirms the student's enrollment in the exam and assigns them a time slot.
 
-#### Potential issues:
--In step 1, the student encounters difficulty logging into the system.
--In step 4, no exams are available for enrollment. 
--In step 5, there are no suitable exam dates for the student.
--In step 6, the deadline for enrolling in the exam has passed.
--In step 6, the exam's capacity is full, so the system automatically places the student on the waiting queue.
--In step 6, the student cannot enroll in the exam due to unfulfilled exam requirements.
+**Potential Issues:**
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, no exams are available for enrollment.
+- In step 5, there are no suitable exam dates for the student.
+- In step 6, the deadline for enrolling in the exam has passed.
+- In step 6, the exam's capacity is full, so the system automatically places the student on the waiting list.
+- In step 6, the student cannot enroll in the exam due to unfulfilled exam requirements.
 
-#### Preconditions:
--The student has the necessary credit for the subject.
--Enrollment for the exam is still open and has available spots.
-#### Postconditions:
--The student is successfully enrolled in the exam fot the selected term.
+**Preconditions:**
+- The student has the necessary credit for the subject.
+- Enrollment for the exam is still open and has available slots.
+
+**Postconditions:**
+- The student is successfully enrolled in the exam for the selected term.
+
 
 ### Get credit:
 
