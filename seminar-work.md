@@ -172,20 +172,20 @@ Result "1" -- "1" Teacher : approves <
 @enduml
 ```
 
-###Student 
+### Student 
 A user of SIS with defined privileges and attributes such as studentId and name, currently enrolled at the university.
 
-###Teacher
+### Teacher
 A user of SIS ith defined privileges and attributes such as teacherId and name, responsible for teaching subjects at the university.
 
-###Result
+### Result
 A score from an exam, typically ranging from 1 to 4 or A to F, along with feedback provided by the teacher to evaluate the student's performance.
 
-###Credit
+### Credit
 A prerequisite for participating in exams.
 
-###Exam 
+### Exam 
 An assessment, either written or oral, administered by a teacher to evaluate students' knowledge and skills.
 
-###Subject
+### Subject
 A course offered during a given semester, which students attend and teachers instruct.
