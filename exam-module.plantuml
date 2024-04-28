@@ -1,36 +1,34 @@
 @startuml ExamsModule
 class Exam {
-  String name
-  String courseCode
-  DateTime examDate
+  date
 }
 
-class Credit {
-
+class Course {
+  name
+  code
 }
 
 class Result {
-  String grade
-  String feedback
+  grade
+  feedback
 }
 
 class Student {
-  String studentId
-  String name
-  List<Credit> creditsEarned
-  Map<Exam, Result> examResults
+  studentId
+  name
 }
 
 class Teacher {
-  String teacherId
-  String name
-  List<Exam> examsTeaching
+  teacherId
+  name
 }
 
-Exam "" -- "" Credit : to enroll for <
-Credit "" -- "" Student : is required to have <
-Exam "" -- "" Result : produces >
-Result "" -- "1" Student : is received by >
-Exam "1" -- "1" Teacher : gives <
-Result "" -- "*" Teacher : approves <
+Exam "*" -- "*" Student
+Exam "1" -- "*" Result
+Result "*" -- "1" Student
+Exam "*" -- "1" Teacher : < overlooks
+Result "*" -- "1" Teacher : < grades
+Course "1" -- "*" Exam
+Teacher "*" -- "*" Course : > teaches
+Student "*" -- "*" Course
 @enduml
