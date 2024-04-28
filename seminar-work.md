@@ -78,30 +78,60 @@ t --> PR
 t --> MED
 @enduml
 ```
-
-To be able to embed PlantUML diagrams to Markdown code with previews in VSCode you need
-* Markdown All in One extension
-* PlantUML extension
-View > Command Pallete... > Markdown All in One: Print current document to HTML
-
-Follow https://plantuml.com/
-This diagram provides a clear overview of the interactions and functionalities within the educational system from the perspective of both students and teachers. 
-
 #### Overview
+This UML diagram provides a comprehensive view of the inner workings of SIS, particularly in the realm of exams and results, offering insights from both student and teacher perspectives. It outlines the various actors involved and their roles within the system. Think of it as a roadmap that sheds light on how the SIS operates behind the scenes, detailing what actions each actor can take and their prerequisites before and after interacting with the SIS.
 
-This UML diagram offers a comprehensive depiction of the interactions and functionalities within an educational system, providing insight from both the perspective of students and teachers. By illustrating various actors, including students and teachers, along with their respective roles and interactions with the system, this diagram serves as a valuable tool for understanding the dynamics of educational processes.
+## Use cases
 
-[*Describe the diagram in a short paragraph. Describe each use case from the diagram in the detail from the lecture in a separate subsection.*]
+### Queue:
 
-###### [*Use case title*]
+**Happy Path:**
+1. The student loggs into their account. 
+2. The system displays the home page.
+3. The student clicks on the icon to sign up for exams.
+4. The system presents a list of upcoming exams with filtering options.
+5. The student selects an exam with full capacity to enroll in. 
+6. The system places the student in the waiting queue.
 
-[*Use case description in the structure from the lecture.*]
+**Potential Issues:**
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, no exams are available for enrollment. 
+- In step 6, the deadline for enrolling in the exam has passed.
+- In step 6, the exam's capacity is not full, so the system automatically enrolls the student.
+- In step 6, the student cannot enroll in the waiting queue due to unfulfilled exam requirements.
 
-[*Add an activity diagram for one use case per a team member*]
+**Preconditions:**
+- The selected exam has reached full capacity.
+- Enrollment for the exam is still open.
+**Postconditions:**
+- The student can view their position in the queue.
+
+### Enroll for Exam:
+
+**Happy Path:**
+1. The student logs into their account.
+2. The system displays the home page.
+3. The student clicks on the icon to sign up for exams.
+4. The system presents a list of upcoming exams with filtering options.
+5. The student selects an exam with a specific date to enroll in.
+6. The system confirms the student's enrollment in the exam and assigns them a time slot.
+
+**Potential Issues:**
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, no exams are available for enrollment.
+- In step 5, there are no suitable exam dates for the student.
+- In step 6, the deadline for enrolling in the exam has passed.
+- In step 6, the exam's capacity is full, so the system automatically places the student on the waiting list.
+- In step 6, the student cannot enroll in the exam due to unfulfilled exam requirements.
+
+**Preconditions:**
+- The student has the necessary credit for the subject.
+- Enrollment for the exam is still open and has available slots.
+
+**Postconditions:**
+- The student is successfully enrolled in the exam for the selected term.
 
 ## Information model
-
-[*Express the information model of the domain as a UML class diagram in PlantUML. Do not use class methods in the diagram, only classes, class attributes and associations connecting classes.*]
 
 ```plantuml
 @startuml
@@ -142,8 +172,20 @@ Result "1" -- "1" Teacher : approves <
 @enduml
 ```
 
-[*Document each class with in a separate subsection*]
+###Student 
+A user of SIS with defined privileges and attributes such as studentId and name, currently enrolled at the university.
 
-### [*Class name*]
+###Teacher
+A user of SIS ith defined privileges and attributes such as teacherId and name, responsible for teaching subjects at the university.
 
-[*Class description consisting of its definition, description of its essential properties (attribues and associations).*]
+###Result
+A score from an exam, typically ranging from 1 to 4 or A to F, along with feedback provided by the teacher to evaluate the student's performance.
+
+###Credit
+A prerequisite for participating in exams.
+
+###Exam 
+An assessment, either written or oral, administered by a teacher to evaluate students' knowledge and skills.
+
+###Subject
+A course offered during a given semester, which students attend and teachers instruct.
