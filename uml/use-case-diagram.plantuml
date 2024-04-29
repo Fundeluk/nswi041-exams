@@ -1,0 +1,32 @@
+@startuml UseCases1
+left to right direction
+actor Student as s
+actor Teacher as t
+usecase "Enroll for exam" as SI
+usecase "Get credit" as GC1
+usecase "Enqueue for waiting list" as QWL1
+usecase "View exam calendar" as VEC1
+usecase "Filter exams" as FE1
+usecase "View exam result" as VER1
+usecase "Unenroll from exam" as SO1
+usecase "Kick student out" as KSO1
+usecase "Publish result" as PR
+usecase "Make/create exam date" as MED
+usecase "Change exam date&time" as CED
+ 
+s --> GC1
+s --> QWL1
+s --> VEC1
+s --> FE1
+s --> VER1
+s --> SO1
+s --> SI
+
+QWL1 --> SI : <<include>>
+SI --> VEC1 : <<extend>>
+
+t --> KSO1
+t --> PR
+t --> MED
+t --> CED
+@enduml

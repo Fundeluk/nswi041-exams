@@ -1,0 +1,34 @@
+@startuml ExamsModule
+class Exam {
+  date
+}
+
+class Course {
+  name
+  code
+}
+
+class Result {
+  grade
+  feedback
+}
+
+class Student {
+  studentId
+  name
+}
+
+class Teacher {
+  teacherId
+  name
+}
+
+Exam "*" -- "*" Student
+Exam "1" -- "*" Result
+Result "*" -- "1" Student
+Exam "*" -- "1" Teacher : < overlooks
+Result "*" -- "1" Teacher : < grades
+Course "1" -- "*" Exam
+Teacher "*" -- "*" Course : > teaches
+Student "*" -- "*" Course
+@enduml

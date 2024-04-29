@@ -85,6 +85,9 @@ t --> PR
 t --> MED
 @enduml
 ```
+
+![use cases diagram](uml/UseCases1.png)
+
 #### Overview
 This UML diagram provides a comprehensive view of the inner workings of SIS, particularly in the realm of exams and results, offering insights from both student and teacher perspectives. It outlines the various actors involved and their roles within the system. Think of it as a roadmap that sheds light on how the SIS operates behind the scenes, detailing what actions each actor can take and their prerequisites before and after interacting with the SIS.
 
@@ -337,6 +340,8 @@ Exam "1" -- "1" Teacher : gives <
 Result "1" -- "1" Teacher : approves <
 @enduml
 ```
+
+![domain class diagram](uml/ExamsModule.png)
 
 ### Student 
 A user of SIS with defined privileges and attributes such as studentId and name, currently enrolled at the university.
