@@ -107,6 +107,7 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 **Preconditions:**
 - The selected exam has reached full capacity.
 - Enrollment for the exam is still open.
+
 **Postconditions:**
 - The student can view their position in the queue.
 
@@ -168,14 +169,17 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 4. The system redirects him to the results
 5. The student selects the course for which they want to see the result
 6. The result is there and the user sees it. 
+
 **Potential Issues:**
 - The user does not have an account (1.)
 - The student has not attended any exams yet (4.)
 - The student has not attended an exam for the course they selected (5.)
 - The student has attended the exam, but the results are not ready yet (6.)
+
 **Preconditions:**
 - Enroll for the exam
 - Attend the exam
+
 **Postconditions:**
 - None
 
@@ -190,20 +194,23 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 6. The system shows a view that allows the user to select place, time and date of the exam.
 7. The teacher fills out all of those.
 8. The exam is created.
+
 **Potential issues:**
 - The user does not have a teachers account (1.)
 - The teacher does not teach any courses in that semester (3.)
 - The place, time and date combination is already taken (7.)
+
 **Preconditions:**
 - Have teacher rights
 - Teach this course
 - Selected date,time&place is not booked
+
 **Postconditions:**
 - Have the ability to change the time,date&place
 
 ### Publish Result
 
-#### Happy Path:
+**Happy Path:**
 
 1. The teacher logs into their account on the Student Information System.
 2. The system displays the teacher's dashboard.
@@ -215,7 +222,7 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 8. The system publishes the results, making them visible to the students.
 9. Students receive notifications that their exam results are available for viewing.
 
-#### Potential Issues:
+**Potential Issues:**
 
 - In step 1, the teacher encounters difficulty logging into the system.
 - In step 4, the system fails to display the correct exams, showing exams that are not yet ready for result publication.
@@ -225,12 +232,12 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 - In step 8, the results do not appear for students due to a delay or error in the publication process.
 - In step 9, students do not receive notifications due to an issue with the notification system.
 
-#### Preconditions:
+**Preconditions:**
 
 - The exams have been completed and graded.
 - The teacher has the necessary permissions to publish results for the course.
 
-#### Postconditions:
+**Postconditions:**
 
 - Exam results are accurately published and visible to students.
 - Notifications are sent out to all relevant students about the availability of their results.
@@ -264,7 +271,7 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 
 ### Kick Student Out
 
-#### Happy Path:
+**Happy Path**:
 
 1. The teacher logs into their account on the Student Information System.
 2. The system displays the teacher's dashboard.
@@ -274,7 +281,7 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 6. The system processes the removal of the student from the enrollment list.
 7. The student receives a notification of their removal due to unmet prerequisites.
 
-#### Potential Issues:
+**Potential Issues**:
 
 - In step 1, the teacher encounters difficulty logging into the system.
 - In step 3, the system fails to load the enrollment list due to a technical error.
@@ -282,12 +289,12 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 - In step 6, the system fails to remove the student from the list due to a processing error.
 - In step 7, the student does not receive the notification due to an issue with the notification system.
 
-#### Preconditions:
+**Preconditions:**
 
 - The student is currently enrolled in an exam for which they have not fulfilled the necessary criteria.
 - The teacher is authorized to manage course enrollments.
 
-#### Postconditions:
+**Postconditions:**
 
 - The student is removed from the exam enrollment list.
 - Both the student and the teacher receive confirmation of the enrollment change.

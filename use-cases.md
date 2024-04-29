@@ -53,12 +53,15 @@
 
 #### Detail:
 Happy path - To meet the criteria for acquiring the credit for the subject which is later granted to the student from the teacher
+
 #### Alternatives: 
 Not having enough points the acquire the credit for the subject
 Not having submitted credit work before deadline
+
 #### Prerequirements:
 To meet the criteria for acquiring the credit for the subject
 To be enrolled for the subject
+
 #### Postrequirements:
 Permission to be able to enroll for the exam
 
