@@ -162,27 +162,49 @@ This UML diagram provides a comprehensive view of the inner workings of SIS, par
 - Have the opportunity to enroll for another date or time.
 - The student is successfully unenrolled from the exam.
 
-### View exam result:
+### View Exam Result
 
-**Happy Path:**   
-1. The student logs into their account.
+**Happy path:**
+1. The user logs into their account.
 2. The system displays the home page.
-3. The student clicks on the icon where are the exams results that the student took.
-4. The system presents the result of exams the student took.
-5. The student has a look on the results from his exams.
-
-
+3. The student clicks on a button.
+4. The system redirects him to the results
+5. The student selects the course for which they want to see the result
+6. The result is there and the user sees it. 
 **Potential Issues:**
-- In step 1, the student encounters difficulty logging into the system.
-- In step 4, there are no results from the exam yet.
-
+- The user does not have an account (1.)
+- The student has not attended any exams yet (4.)
+- The student has not attended an exam for the course they selected (5.)
+- The student has attended the exam, but the results are not ready yet (6.)
 **Preconditions:**
-- The student had to take an exam he wants to see the results from.
-
+- Enroll for the exam
+- Attend the exam
 **Postconditions:**
-- To be able to view the correct results. 
+- None
 
- ### Publish Result
+### Make/create exam
+
+**Happy path:**
+1. The user logs into their teacher account.
+2. The system displays the homepage.
+3. The teacher clicks a button that is supposed to redirect him to a view of the courses they teach.
+4. The system redirects him to that view.
+5. The teacher clicks a 'create exam' button next to the course they want to create the exam for.
+6. The system shows a view that allows the user to select place, time and date of the exam.
+7. The teacher fills out all of those.
+8. The exam is created.
+**Potential issues:**
+- The user does not have a teachers account (1.)
+- The teacher does not teach any courses in that semester (3.)
+- The place, time and date combination is already taken (7.)
+**Preconditions:**
+- Have teacher rights
+- Teach this course
+- Selected date,time&place is not booked
+**Postconditions:**
+- Have the ability to change the time,date&place
+
+### Publish Result
 
 #### Happy Path:
 
@@ -217,39 +239,7 @@ This UML diagram provides a comprehensive view of the inner workings of SIS, par
 - Notifications are sent out to all relevant students about the availability of their results.
 - The system logs the publication event for auditing and compliance purposes.
 
-### Make/create exam
-
-**Happy Path:**
-
-1. The teacher logs into their account on the Student Information System.
-2. The system displays the teacher's dashboard.
-3. The teacher selects the option to create a new exam.
-4. The system prompts the teacher to enter details of the exam, including date, time, and location.
-5. The teacher inputs the necessary information and submits it for scheduling.
-6. The system verifies the availability of the selected date, time, and location.
-7. Upon confirmation of availability, the system schedules the exam and updates the course schedule.
-8. The system confirms to the teacher that the exam has been successfully scheduled.
-9. Students enrolled in the course receive notifications about the newly scheduled exam.
-
-**Potential Issues:**
-
-1. In step 1, the teacher encounters difficulty logging into the system.
-2. In step 6, the system identifies a scheduling conflict because the selected location is already booked for the chosen date and time.
-3. In step 7, the teacher does not have the necessary permissions to schedule an exam for the course, resulting in rejection of the request.
-4. In step 9, students do not receive notifications due to an issue with the notification system.
-
-**Preconditions:**
-
-- The teacher has the necessary permissions to schedule exams.
-- The teacher is assigned to teach the course in question.
-- The selected date, time, and location are initially presumed to be available.
-
-**Postconditions:**
-
-- The exam is scheduled correctly with all details confirmed and visible in the system.
-- Notifications are sent out to all relevant students about the newly scheduled exam.
-
-**Filter Exams**
+### Filter Exams
 
 **Happy Path:**
 
