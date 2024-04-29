@@ -16,6 +16,7 @@ This section specifies the functional requirements.
 - As a student, I should be able to view my examination results as soon as they are published because I want to keep track of my academic progress.
 - As a student, I should be able to view my examination history, including past scores and feedback, because I want to evaluate my academic performance over time.
 - As a student, I should be able to download or print my exam results for my records because I may need them for personal documentation or verification purposes.
+  
 **Teachers**
 - I should be able to kick out enrolled students automatically if they have not yet fulfilled criteria needed for the enrollment (e.g. credit), because it will be tedious to do so manually.
 - As examiner, I should be able to publish exam results efficiently because it is essential to provide timely feedback to students.
