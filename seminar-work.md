@@ -384,7 +384,6 @@ Course "1" -- "*" Exam
 Teacher "*" -- "*" Course : > teaches
 Student "*" -- "*" Course
 @enduml
-@enduml
 ```
 
 ![domain class diagram](uml/ExamsModule.png)
