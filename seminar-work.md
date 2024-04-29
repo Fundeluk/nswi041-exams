@@ -44,7 +44,7 @@ A student can enroll for exam of a lecture a student is admitted to and take the
 ##### Results and exams
 
 ```plantuml
-@startuml UseCases1
+@startuml UseCases
 left to right direction
 actor Student as s
 actor Teacher as t
@@ -70,6 +70,7 @@ s --> SI
 
 QWL1 --> SI : <<include>>
 SI --> VEC1 : <<extend>>
+SI --> FE1 : <<extend>>
 
 t --> KSO1
 t --> PR
@@ -79,10 +80,10 @@ t --> CED
 
 ```
 
-![use cases diagram](uml/UseCases1.png)
+![use cases diagram](uml/UseCases.png)
 
 #### Overview
-This UML diagram provides a comprehensive view of the inner workings of SIS, particularly in the realm of exams and results, offering insights from both student and teacher perspectives. It outlines the various actors involved and their roles within the system. Think of it as a roadmap that sheds light on how the SIS operates behind the scenes, detailing what actions each actor can take and their prerequisites before and after interacting with the SIS.
+This UML diagram provides a comprehensive view of the inner workings of our system, particularly in the realm of exams and results, offering insights from both student and teacher perspectives. It outlines the various actors involved and their roles within the system. Think of it as a roadmap that sheds light on how the exams system operates behind the scenes, detailing what actions each actor can take and their prerequisites before and after interacting with the system.
 
 ## Use cases
 
@@ -336,16 +337,13 @@ Student "*" -- "*" Course
 ![domain class diagram](uml/ExamsModule.png)
 
 ### Student 
-A user of SIS with defined privileges and attributes such as studentId and name, currently enrolled at the university.
+A user of our student integration system with defined privileges and attributes such as studentId and name, currently enrolled at the university.
 
 ### Teacher
-A user of SIS with defined privileges and attributes such as teacherId and name, responsible for teaching subjects at the university.
+A user of our student integration system with defined privileges and attributes such as teacherId and name, responsible for teaching subjects at the university.
 
 ### Result
 A score from an exam, typically ranging from 1 to 4 or A to F, along with feedback provided by the teacher to evaluate the student's performance.
-
-### Credit
-A prerequisite for participating in exams.
 
 ### Exam 
 An assessment, either written or oral, administered by a teacher to evaluate students' knowledge and skills.
