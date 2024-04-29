@@ -20,6 +20,7 @@
 **Preconditions:**
 - The selected exam has reached full capacity.
 - Enrollment for the exam is still open.
+
 **Postconditions:**
 - The student can view their position in the queue.
 
@@ -51,19 +52,29 @@
 
 ### Get credit:
 
-#### Detail:
-Happy path - To meet the criteria for acquiring the credit for the subject which is later granted to the student from the teacher
+**Detail:**
 
-#### Alternatives: 
-Not having enough points the acquire the credit for the subject
-Not having submitted credit work before deadline
+1. The user logs into their teacher account.
+2. The system displays the homepage.
+3. The teacher clicks a button that is supposed to redirect him to a view of the courses they teach.
+4. The system redirects him to that view.
+5. The teacher finds the student he wants to give credit to.
+6. The system shows him the student account.
+7. Teacher awards credit to the student
 
-#### Prerequirements:
-To meet the criteria for acquiring the credit for the subject
-To be enrolled for the subject
+**Alternatives:** 
 
-#### Postrequirements:
-Permission to be able to enroll for the exam
+1. Not having enough points the acquire the credit for the subject
+2. Not having submitted credit work before deadline
+
+**Prerequirements:**
+
+- To meet the criteria for acquiring the credit for the subject
+- To be enrolled for the subject
+
+**Postrequirements:**
+
+- Permission to be able to enroll for the exam
 
 ### Filter Exams
 
@@ -93,18 +104,27 @@ Permission to be able to enroll for the exam
 
 ### Pass exam:
 
-#### Detail:
-Happy path - To pass the exam to be awarded with passing of this course
-#### Alternatives: 
-Not to have enough points for passing the exam
-#### Prerequirement:
-To be enrolled for the specific exam date that you are taking
-#### Postrequirement:
-Completing the subject and passing the exam you enrolled.
+**Detail:**
+
+1. Student takes the exam
+2. Teacher passes the student
+
+**Alternatives:** 
+
+1. In step 2, the teacher may not award enough points to make the student pass.
+
+**Prerequirement:**
+
+- To be enrolled for the specific exam date that you are taking
+
+**Postrequirement:**
+
+- Completing the subject and passing the exam you enrolled.
+
 
 ### Unenroll from Exam
 
-#### Happy Path:
+**Happy Path**:
 
 1. The student logs into their account on the Student Information System.
 2. The system displays the home page.
@@ -113,18 +133,18 @@ Completing the subject and passing the exam you enrolled.
 5. The student selects an exam by clicking the specific name and icon to unenroll from the exam.
 6. The system confirms the student's unenrollment from the exam.
 
-#### Potential Issues:
+**Potential Issues**:
 
 - In step 1, the student encounters difficulty logging into the system.
 - In step 4, the system fails to display a list of enrolled exams.
 - In step 5, the deadline for unenrolling from the exam has already passed.
 
-#### Preconditions:
+**Preconditions:**
 
 - The student is enrolled in the exam.
 - The unenrollment option is still available for the exam.
 
-#### Postconditions:
+**Postconditions:**
 
 - The student has the opportunity to enroll for another date or time.
 - The student is successfully unenrolled from the exam.
@@ -138,14 +158,17 @@ Completing the subject and passing the exam you enrolled.
 4. The system redirects him to the results
 5. The student selects the course for which they want to see the result
 6. The result is there and the user sees it. 
+
 **Potential Issues:**
 - The user does not have an account (1.)
 - The student has not attended any exams yet (4.)
 - The student has not attended an exam for the course they selected (5.)
 - The student has attended the exam, but the results are not ready yet (6.)
+
 **Preconditions:**
 - Enroll for the exam
 - Attend the exam
+
 **Postconditions:**
 - None
 
@@ -160,20 +183,23 @@ Completing the subject and passing the exam you enrolled.
 6. The system shows a view that allows the user to select place, time and date of the exam.
 7. The teacher fills out all of those.
 8. The exam is created.
+
 **Potential issues:**
 - The user does not have a teachers account (1.)
 - The teacher does not teach any courses in that semester (3.)
 - The place, time and date combination is already taken (7.)
+
 **Preconditions:**
 - Have teacher rights
 - Teach this course
 - Selected date,time&place is not booked
+
 **Postconditions:**
 - Have the ability to change the time,date&place
 
 ### Publish Result
 
-#### Happy Path:
+**Happy Path**:
 
 1. The teacher logs into their account on the Student Information System.
 2. The system displays the teacher's dashboard.
@@ -185,7 +211,7 @@ Completing the subject and passing the exam you enrolled.
 8. The system publishes the results, making them visible to the students.
 9. Students receive notifications that their exam results are available for viewing.
 
-#### Potential Issues:
+**Potential Issues**:
 
 - In step 1, the teacher encounters difficulty logging into the system.
 - In step 4, the system fails to display the correct exams, showing exams that are not yet ready for result publication.
@@ -195,12 +221,12 @@ Completing the subject and passing the exam you enrolled.
 - In step 8, the results do not appear for students due to a delay or error in the publication process.
 - In step 9, students do not receive notifications due to an issue with the notification system.
 
-#### Preconditions:
+**Preconditions:**
 
 - The exams have been completed and graded.
 - The teacher has the necessary permissions to publish results for the course.
 
-#### Postconditions:
+**Postconditions:**
 
 - Exam results are accurately published and visible to students.
 - Notifications are sent out to all relevant students about the availability of their results.
@@ -208,7 +234,7 @@ Completing the subject and passing the exam you enrolled.
 
 ### Kick Student Out
 
-#### Happy Path:
+**Happy Path**:
 
 1. The teacher logs into their account on the Student Information System.
 2. The system displays the teacher's dashboard.
@@ -218,7 +244,7 @@ Completing the subject and passing the exam you enrolled.
 6. The system processes the removal of the student from the enrollment list.
 7. The student receives a notification of their removal due to unmet prerequisites.
 
-#### Potential Issues:
+**Potential Issues**:
 
 - In step 1, the teacher encounters difficulty logging into the system.
 - In step 3, the system fails to load the enrollment list due to a technical error.
@@ -226,12 +252,12 @@ Completing the subject and passing the exam you enrolled.
 - In step 6, the system fails to remove the student from the list due to a processing error.
 - In step 7, the student does not receive the notification due to an issue with the notification system.
 
-#### Preconditions:
+**Preconditions:**
 
 - The student is currently enrolled in an exam for which they have not fulfilled the necessary criteria.
 - The teacher is authorized to manage course enrollments.
 
-#### Postconditions:
+**Postconditions:**
 
 - The student is removed from the exam enrollment list.
 - Both the student and the teacher receive confirmation of the enrollment change.

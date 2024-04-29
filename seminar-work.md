@@ -301,6 +301,52 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 - The system updates its records to reflect the removal for auditing and tracking purposes.
 
 
+### Get credit:
+
+**Detail:**
+
+1. The user logs into their teacher account.
+2. The system displays the homepage.
+3. The teacher clicks a button that is supposed to redirect him to a view of the courses they teach.
+4. The system redirects him to that view.
+5. The teacher finds the student he wants to give credit to.
+6. The system shows him the student account.
+7. Teacher awards credit to the student
+
+**Alternatives:** 
+
+1. Not having enough points the acquire the credit for the subject
+2. Not having submitted credit work before deadline
+
+**Prerequirements:**
+
+- To meet the criteria for acquiring the credit for the subject
+- To be enrolled for the subject
+
+**Postrequirements:**
+
+- Permission to be able to enroll for the exam
+
+### Pass exam:
+
+**Detail:**
+
+1. Student takes the exam
+2. Teacher passes the student
+
+**Alternatives:** 
+
+1. In step 2, the teacher may not award enough points to make the student pass.
+
+**Prerequirement:**
+
+- To be enrolled for the specific exam date that you are taking
+
+**Postrequirement:**
+
+- Completing the subject and passing the exam you enrolled.
+
+
 ## Information model
 
 ```plantuml
