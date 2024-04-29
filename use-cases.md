@@ -62,18 +62,31 @@ To be enrolled for the subject
 #### Postrequirements:
 Permission to be able to enroll for the exam
 
-### Filter exams:
+### Filter Exams
 
-#### Detail:
-Happy path - to choose from options that are available
-#### Alternatives: 
-There is no term of exam that meets the criteria
-There are no terms for the exam listed yet
-#### Prerequirements:
-List of terms for the exam
-To be enrolled for the subject
-#### Postrequirements:
-The list of all the terms for the exam that meets the criteria from the options available
+**Happy Path:**
+
+1. The student logs into their account on the Student Information System.
+2. The system displays the student's dashboard.
+3. The student navigates to the "Exams" section to view upcoming exams.
+4. The system presents a set of filtering options, such as term, subject, and date.
+5. The student selects the desired criteria from the available options to filter the exams.
+6. The system processes the request and displays a list of exam terms that meet the selected criteria.
+7. The student reviews the filtered list of exam terms.
+
+**Potential Issues:**
+
+1. In step 5, there are no exam terms that meet the selected filtering criteria, resulting in no exams being displayed.
+2. In step 5, the student attempts to filter exams for a subject they are not enrolled in, leading to an error message.
+
+**Preconditions:**
+
+- A list of terms for exams is available in the system.
+- The student is enrolled in the subject for which they are attempting to filter exams.
+
+**Postconditions:**
+
+- The system displays a list of all the exam terms that meet the criteria selected by the student.
 
 ### Pass exam:
 
@@ -86,18 +99,34 @@ To be enrolled for the specific exam date that you are taking
 #### Postrequirement:
 Completing the subject and passing the exam you enrolled.
 
-### Unenroll from exam:
+### Unenroll from Exam
 
-#### Detail:
-Happy path- Successfully unenroll from the exam.
-#### Alternatives: 
-It is not possible to unenroll from the exam anymore.
-#### Prerequirement:
-To be enrolled for the exam. 
-#### Postrequirement:
-Have the oportunity to enroll for another date or time.
+#### Happy Path:
 
-### View exam result
+1. The student logs into their account on the Student Information System.
+2. The system displays the home page.
+3. The student clicks on the icon where exams they are enrolled in are listed.
+4. The system presents a list of exams the student is enrolled for.
+5. The student selects an exam by clicking the specific name and icon to unenroll from the exam.
+6. The system confirms the student's unenrollment from the exam.
+
+#### Potential Issues:
+
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, the system fails to display a list of enrolled exams.
+- In step 5, the deadline for unenrolling from the exam has already passed.
+
+#### Preconditions:
+
+- The student is enrolled in the exam.
+- The unenrollment option is still available for the exam.
+
+#### Postconditions:
+
+- The student has the opportunity to enroll for another date or time.
+- The student is successfully unenrolled from the exam.
+
+### View Exam Result
 
 **Happy path:**
 1. The user logs into their account.
@@ -141,35 +170,66 @@ Have the oportunity to enroll for another date or time.
 
 ### Publish Result
 
-#### Detail:
-Happy path - The teacher efficiently publishes the exam results into the system, which then become immediately available for students to view.
+#### Happy Path:
 
-#### Alternatives:
-- The publishing process encounters a technical error, delaying the availability of results.
-- The teacher mistakenly publishes incomplete or incorrect results and needs to retract or amend them.
+1. The teacher logs into their account on the Student Information System.
+2. The system displays the teacher's dashboard.
+3. The teacher selects the course for which they want to publish exam results.
+4. The system displays a list of completed exams along with options to enter or upload results.
+5. The teacher inputs or uploads the finalized exam results.
+6. The system verifies the accuracy and completeness of the uploaded data.
+7. The teacher confirms the publication of the results.
+8. The system publishes the results, making them visible to the students.
+9. Students receive notifications that their exam results are available for viewing.
 
-#### Prerequirements:
-- The teacher has access to the system with rights to publish results.
-- The exams have been graded and the results finalized.
+#### Potential Issues:
 
-#### Postrequirements:
-- Students are able to view their exam results as soon as they are published.
-- Notifications might be sent to students alerting them of newly published results.
+- In step 1, the teacher encounters difficulty logging into the system.
+- In step 4, the system fails to display the correct exams, showing exams that are not yet ready for result publication.
+- In step 5, the teacher inputs incomplete or incorrect results, requiring revision.
+- In step 6, the system encounters an error during data verification, delaying the process.
+- In step 7, the teacher inadvertently publishes the wrong results, necessitating a retraction and correction.
+- In step 8, the results do not appear for students due to a delay or error in the publication process.
+- In step 9, students do not receive notifications due to an issue with the notification system.
+
+#### Preconditions:
+
+- The exams have been completed and graded.
+- The teacher has the necessary permissions to publish results for the course.
+
+#### Postconditions:
+
+- Exam results are accurately published and visible to students.
+- Notifications are sent out to all relevant students about the availability of their results.
+- The system logs the publication event for auditing and compliance purposes.
 
 ### Kick Student Out
 
-#### Detail:
-Happy path - The teacher uses the system to automatically unenroll students who have not fulfilled the prerequisite criteria (e.g., requisite credits) for the exam.
+#### Happy Path:
 
-#### Alternatives:
-- The system fails to identify and remove a student who hasn't met the prerequisites.
-- A student is mistakenly removed due to incorrect data regarding their prerequisites.
+1. The teacher logs into their account on the Student Information System.
+2. The system displays the teacher's dashboard.
+3. The teacher accesses the enrollment list for a specific course.
+4. The system presents a list of all enrolled students along with their eligibility status.
+5. The teacher selects a student who has not met the necessary prerequisites for the exam.
+6. The system processes the removal of the student from the enrollment list.
+7. The student receives a notification of their removal due to unmet prerequisites.
 
-#### Prerequirements:
-- The student is currently enrolled in an exam for which they do not meet the necessary criteria.
-- The teacher has the appropriate system permissions to manage enrollments and remove students.
+#### Potential Issues:
 
-#### Postrequirements:
-- The student is no longer enrolled in the exam.
-- The student and teacher receive notifications about the change in enrollment status.
-- The system logs the action for auditing purposes.
+- In step 1, the teacher encounters difficulty logging into the system.
+- In step 3, the system fails to load the enrollment list due to a technical error.
+- In step 5, the system shows incorrect data, leading to the wrongful selection of a student who actually meets the prerequisites.
+- In step 6, the system fails to remove the student from the list due to a processing error.
+- In step 7, the student does not receive the notification due to an issue with the notification system.
+
+#### Preconditions:
+
+- The student is currently enrolled in an exam for which they have not fulfilled the necessary criteria.
+- The teacher is authorized to manage course enrollments.
+
+#### Postconditions:
+
+- The student is removed from the exam enrollment list.
+- Both the student and the teacher receive confirmation of the enrollment change.
+- The system updates its records to reflect the removal for auditing and tracking purposes.
