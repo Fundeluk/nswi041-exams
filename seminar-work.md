@@ -217,6 +217,64 @@ This UML diagram provides a comprehensive view of the inner workings of SIS, par
 - Notifications are sent out to all relevant students about the availability of their results.
 - The system logs the publication event for auditing and compliance purposes.
 
+### Make/create exam
+
+**Happy Path:**
+
+1. The teacher logs into their account on the Student Information System.
+2. The system displays the teacher's dashboard.
+3. The teacher selects the option to create a new exam.
+4. The system prompts the teacher to enter details of the exam, including date, time, and location.
+5. The teacher inputs the necessary information and submits it for scheduling.
+6. The system verifies the availability of the selected date, time, and location.
+7. Upon confirmation of availability, the system schedules the exam and updates the course schedule.
+8. The system confirms to the teacher that the exam has been successfully scheduled.
+9. Students enrolled in the course receive notifications about the newly scheduled exam.
+
+**Potential Issues:**
+
+1. In step 1, the teacher encounters difficulty logging into the system.
+2. In step 6, the system identifies a scheduling conflict because the selected location is already booked for the chosen date and time.
+3. In step 7, the teacher does not have the necessary permissions to schedule an exam for the course, resulting in rejection of the request.
+4. In step 9, students do not receive notifications due to an issue with the notification system.
+
+**Preconditions:**
+
+- The teacher has the necessary permissions to schedule exams.
+- The teacher is assigned to teach the course in question.
+- The selected date, time, and location are initially presumed to be available.
+
+**Postconditions:**
+
+- The exam is scheduled correctly with all details confirmed and visible in the system.
+- Notifications are sent out to all relevant students about the newly scheduled exam.
+
+**Filter Exams**
+
+**Happy Path:**
+
+1. The student logs into their account on the Student Information System.
+2. The system displays the student's dashboard.
+3. The student navigates to the "Exams" section to view upcoming exams.
+4. The system presents a set of filtering options, such as term, subject, and date.
+5. The student selects the desired criteria from the available options to filter the exams.
+6. The system processes the request and displays a list of exam terms that meet the selected criteria.
+7. The student reviews the filtered list of exam terms.
+
+**Potential Issues:**
+
+1. In step 5, there are no exam terms that meet the selected filtering criteria, resulting in no exams being displayed.
+2. In step 5, the student attempts to filter exams for a subject they are not enrolled in, leading to an error message.
+
+**Preconditions:**
+
+- A list of terms for exams is available in the system.
+- The student is enrolled in the subject for which they are attempting to filter exams.
+
+**Postconditions:**
+
+- The system displays a list of all the exam terms that meet the criteria selected by the student.
+
 ### Kick Student Out
 
 #### Happy Path:
