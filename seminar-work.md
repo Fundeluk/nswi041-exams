@@ -44,23 +44,21 @@ A student can enroll for exam of a lecture a student is admitted to and take the
 ##### Results and exams
 
 ```plantuml
-@startuml
+@startuml UseCases1
 left to right direction
 actor Student as s
 actor Teacher as t
-usecase "Enroll" as SI
+usecase "Enroll for exam" as SI
 usecase "Get credit" as GC1
 usecase "Enqueue for waiting list" as QWL1
 usecase "View exam calendar" as VEC1
 usecase "Filter exams" as FE1
 usecase "View exam result" as VER1
-usecase "Unenroll" as SO1
+usecase "Unenroll from exam" as SO1
 usecase "Kick student out" as KSO1
 usecase "Publish result" as PR
 usecase "Make/create exam date" as MED
 usecase "Change exam date&time" as CED
-usecase "Not pass exam" as NPE
-usecase "Pass exam" as PE
  
 s --> GC1
 s --> QWL1
@@ -68,22 +66,17 @@ s --> VEC1
 s --> FE1
 s --> VER1
 s --> SO1
+s --> SI
 
-VER1 --> NPE : <<include>>
-VER1 --> PE : <<include>>
-GC1 --> SI : <<include>>
-VEC1 --> SI : <<include>>
-FE1 --> SI : <<extend>>
-QWL1 --> SI : <<extend>>
-MED --> SI : <<include>>
-PR --> VER1 : <<include>>
-PR --> VER1 : <<include>>
-MED --> CED : <<include>>
+QWL1 --> SI : <<include>>
+SI --> VEC1 : <<extend>>
 
 t --> KSO1
 t --> PR
 t --> MED
+t --> CED
 @enduml
+
 ```
 
 ![use cases diagram](uml/UseCases1.png)
@@ -303,41 +296,40 @@ This UML diagram provides a comprehensive view of the inner workings of SIS, par
 ## Information model
 
 ```plantuml
-@startuml
+@startuml ExamsModule
 class Exam {
-  String name
-  String courseCode
-  DateTime examDate
+  date
 }
 
-class Credit {
-
+class Course {
+  name
+  code
 }
 
 class Result {
-  String grade
-  String feedback
+  grade
+  feedback
 }
 
 class Student {
-  String studentId
-  String name
-  List<Credit> creditsEarned
-  Map<Exam, Result> examResults
+  studentId
+  name
 }
 
 class Teacher {
-  String teacherId
-  String name
-  List<Exam> examsTeaching
+  teacherId
+  name
 }
 
-Exam "1" -- "" Credit : to enroll for <
-Credit "1" -- "" Student : is required to have <
-Exam "1" -- "*" Result : produces >
-Result "1" -- "1" Student : is received by >
-Exam "1" -- "1" Teacher : gives <
-Result "1" -- "1" Teacher : approves <
+Exam "*" -- "*" Student
+Exam "1" -- "*" Result
+Result "*" -- "1" Student
+Exam "*" -- "1" Teacher : < overlooks
+Result "*" -- "1" Teacher : < grades
+Course "1" -- "*" Exam
+Teacher "*" -- "*" Course : > teaches
+Student "*" -- "*" Course
+@enduml
 @enduml
 ```
 

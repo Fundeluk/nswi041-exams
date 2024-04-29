@@ -1,4 +1,4 @@
-@startuml UseCases1
+@startuml UseCases
 left to right direction
 actor Student as s
 actor Teacher as t
