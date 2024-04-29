@@ -86,29 +86,55 @@ To be enrolled for the specific exam date that you are taking
 #### Postrequirement:
 Completing the subject and passing the exam you enrolled.
 
-### Unenroll from exam:
+### Unenroll from Exam
 
-#### Detail:
-Happy path- Successfully unenroll from the exam.
-#### Alternatives: 
-It is not possible to unenroll from the exam anymore.
-#### Prerequirement:
-To be enrolled for the exam. 
-#### Postrequirement:
-Have the oportunity to enroll for another date or time.
+#### Happy Path:
 
-### View exam result
+1. The student logs into their account on the Student Information System.
+2. The system displays the home page.
+3. The student clicks on the icon where exams they are enrolled in are listed.
+4. The system presents a list of exams the student is enrolled for.
+5. The student selects an exam by clicking the specific name and icon to unenroll from the exam.
+6. The system confirms the student's unenrollment from the exam.
 
-#### Detail:
-Happy path - User successfully views the result of his exam
-#### Alternatives:
-The results are not ready yet
-The user tries to view results of a different user and is rejected  
-#### Prerequirement:
-Enroll for the exam
-Attend the exam
-#### Postrequirement:
-None
+#### Potential Issues:
+
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, the system fails to display a list of enrolled exams.
+- In step 5, the deadline for unenrolling from the exam has already passed.
+
+#### Preconditions:
+
+- The student is enrolled in the exam.
+- The unenrollment option is still available for the exam.
+
+#### Postconditions:
+
+- The student has the opportunity to enroll for another date or time.
+- The student is successfully unenrolled from the exam.
+
+### View Exam Result
+
+#### Happy Path:
+
+1. The student logs into their account on the Student Information System.
+2. The system displays the home page.
+3. The student clicks on the icon where their exam results are listed.
+4. The system presents the results of exams the student has taken.
+5. The student views the results from their exams.
+
+#### Potential Issues:
+
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, the exam results are not yet available.
+
+#### Preconditions:
+
+- The student has taken an exam for which they wish to see the results.
+
+#### Postconditions:
+
+- There are no postconditions; the student has simply accessed and viewed their results.
 
 ### Make/create exam
 
