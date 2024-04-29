@@ -131,6 +131,50 @@ This UML diagram provides a comprehensive view of the inner workings of SIS, par
 **Postconditions:**
 - The student is successfully enrolled in the exam for the selected term.
 
+### Unenroll from exam:
+
+**Happy Path:**   
+1. The student logs into their account.
+2. The system displays the home page.
+3. The student clicks on the icon where are the exams that the student enrolled for.
+4. The system presents a list of exams the student is enrolled for.
+5. The student selects an exam with a specific name of the exam and icon to unenroll from the exam.
+6. The system confirms the student's unenrollment from the exam.
+
+
+**Potential Issues:**
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, there is no list of the exams he is enrolled for.
+- In step 5, the deadline for unenrolling from the exam has passed.
+
+**Preconditions:**
+- To be enrolled for the exam.
+- Unenrollment for the exam is still available.
+
+**Postconditions:**
+- Have the opportunity to enroll for another date or time.
+- The student is successfully unenrolled from the exam.
+
+### View exam result:
+
+**Happy Path:**   
+1. The student logs into their account.
+2. The system displays the home page.
+3. The student clicks on the icon where are the exams results that the student took.
+4. The system presents the result of exams the student took.
+5. The student has a look on the results from his exams.
+
+
+**Potential Issues:**
+- In step 1, the student encounters difficulty logging into the system.
+- In step 4, there are no results from the exam yet.
+
+**Preconditions:**
+- The student had to take an exam he wants to see the results from.
+
+**Postconditions:**
+- To be able to view the correct results. 
+    
 ## Information model
 
 ```plantuml
