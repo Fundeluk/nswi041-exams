@@ -181,7 +181,74 @@ This UML diagram provides a comprehensive view of the inner workings of SIS, par
 
 **Postconditions:**
 - To be able to view the correct results. 
-    
+
+ ### Publish Result
+
+#### Happy Path:
+
+1. The teacher logs into their account on the Student Information System.
+2. The system displays the teacher's dashboard.
+3. The teacher selects the course for which they want to publish exam results.
+4. The system displays a list of completed exams along with options to enter or upload results.
+5. The teacher inputs or uploads the finalized exam results.
+6. The system verifies the accuracy and completeness of the uploaded data.
+7. The teacher confirms the publication of the results.
+8. The system publishes the results, making them visible to the students.
+9. Students receive notifications that their exam results are available for viewing.
+
+#### Potential Issues:
+
+- In step 1, the teacher encounters difficulty logging into the system.
+- In step 4, the system fails to display the correct exams, showing exams that are not yet ready for result publication.
+- In step 5, the teacher inputs incomplete or incorrect results, requiring revision.
+- In step 6, the system encounters an error during data verification, delaying the process.
+- In step 7, the teacher inadvertently publishes the wrong results, necessitating a retraction and correction.
+- In step 8, the results do not appear for students due to a delay or error in the publication process.
+- In step 9, students do not receive notifications due to an issue with the notification system.
+
+#### Preconditions:
+
+- The exams have been completed and graded.
+- The teacher has the necessary permissions to publish results for the course.
+
+#### Postconditions:
+
+- Exam results are accurately published and visible to students.
+- Notifications are sent out to all relevant students about the availability of their results.
+- The system logs the publication event for auditing and compliance purposes.
+
+### Kick Student Out
+
+#### Happy Path:
+
+1. The teacher logs into their account on the Student Information System.
+2. The system displays the teacher's dashboard.
+3. The teacher accesses the enrollment list for a specific course.
+4. The system presents a list of all enrolled students along with their eligibility status.
+5. The teacher selects a student who has not met the necessary prerequisites for the exam.
+6. The system processes the removal of the student from the enrollment list.
+7. The student receives a notification of their removal due to unmet prerequisites.
+
+#### Potential Issues:
+
+- In step 1, the teacher encounters difficulty logging into the system.
+- In step 3, the system fails to load the enrollment list due to a technical error.
+- In step 5, the system shows incorrect data, leading to the wrongful selection of a student who actually meets the prerequisites.
+- In step 6, the system fails to remove the student from the list due to a processing error.
+- In step 7, the student does not receive the notification due to an issue with the notification system.
+
+#### Preconditions:
+
+- The student is currently enrolled in an exam for which they have not fulfilled the necessary criteria.
+- The teacher is authorized to manage course enrollments.
+
+#### Postconditions:
+
+- The student is removed from the exam enrollment list.
+- Both the student and the teacher receive confirmation of the enrollment change.
+- The system updates its records to reflect the removal for auditing and tracking purposes.
+
+
 ## Information model
 
 ```plantuml
