@@ -25,14 +25,21 @@ This section specifies the functional requirements.
 ### System requirements
 
 #### Actors
-
+- Student
+- Teacher
+  
 ##### Student
 
-The student actor represents an individual enrolled in courses and participating in exams within the educational system.
+A student is a person studying at the university.
+A student can view their personal results and credits gained in individual courses.
+A student can enroll for exam of a lecture a student is admitted to and take the exam.
 
 ##### Teacher
 
-The teacher actor represents an instructor or educator who conducts classes, administers exams, and provides feedback within the educational system.
+ A teacher is an employee of the university.
+ A teacher can set a date and time for the exam.
+ A teacher is responsible for grading the students.
+ A teacher may edit the students' exam and thesis results.
 
 ##### Results and exams
 
