@@ -22,7 +22,6 @@ s --> VER1
 s --> SO1
 s --> SI
 
-QWL1 --> SI : <<include>>
 SI --> VEC1 : <<extend>>
 SI --> FE1 : <<extend>>
 

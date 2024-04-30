@@ -69,7 +69,6 @@ s --> VER1
 s --> SO1
 s --> SI
 
-QWL1 --> SI : <<include>>
 SI --> VEC1 : <<extend>>
 SI --> FE1 : <<extend>>
 
@@ -77,8 +76,8 @@ t --> KSO1
 t --> PR
 t --> MED
 t --> CED
+t --> VEC1
 @enduml
-
 ```
 
 ![use cases diagram](uml/UseCases.png)
@@ -376,14 +375,14 @@ class Teacher {
   name
 }
 
-Exam "*" -- "*" Student
-Exam "1" -- "*" Result
-Result "*" -- "1" Student
+Exam "*" -- "*" Student : < takes
+Exam "1" -- "*" Result : > produces
+Result "*" -- "1" Student : < recieves
 Exam "*" -- "1" Teacher : < overlooks
 Result "*" -- "1" Teacher : < grades
 Course "1" -- "*" Exam
 Teacher "*" -- "*" Course : > teaches
-Student "*" -- "*" Course
+Student "*" -- "*" Course : > studies
 @enduml
 ```
 
