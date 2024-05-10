@@ -98,11 +98,11 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 6. The system places the student in the waiting queue.
 
 **Potential Issues:**
-- In step 1, the student encounters difficulty logging into the system.
-- In step 4, no exams are available for enrollment. 
-- In step 6, the deadline for enrolling in the exam has passed.
+- In step 1, the student encounters difficulty logging into the system and the error occurs on the screen.
+- In step 4, no exams are available for enrollment, so the student will need to come back to the system and check the exams again.
+- In step 6, the deadline for enrolling in the exam has passed the student is barred from registering for the exam.  
 - In step 6, the exam's capacity is not full, so the system automatically enrolls the student.
-- In step 6, the student cannot enroll in the waiting queue due to unfulfilled exam requirements.
+- In step 6, the student cannot enroll in the waiting queue due to unfulfilled exam requirements and the system will notify the student about it.
 
 **Preconditions:**
 - The selected exam has reached full capacity.
@@ -122,8 +122,8 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 6. The system confirms the student's enrollment in the exam and assigns them a time slot.
 
 **Potential Issues:**
-- In step 1, the student encounters difficulty logging into the system.
-- In step 4, no exams are available for enrollment.
+- In step 1, the student encounters difficulty logging into the system and the error occurs on the screen.
+- In step 4, no exams are available for enrollment, so the student will need to come back to the system and check the exams again.
 - In step 5, there are no suitable exam dates for the student.
 - In step 6, the deadline for enrolling in the exam has passed.
 - In step 6, the exam's capacity is full, so the system automatically places the student on the waiting list.
@@ -148,10 +148,10 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 
 
 **Potential Issues:**
-- In step 1, the student encounters difficulty logging into the system.
-- In step 4, there is no list of the exams he is enrolled for.
+- In step 1, the student encounters difficulty logging into the system and the error occurs on the screen.
+- In step 4, there is no list of the exams he is enrolled for, so the student will need to come back to the system and check the exams again.
 - In step 5, the deadline for unenrolling from the exam has passed.
-
+  
 **Preconditions:**
 - To be enrolled for the exam.
 - Unenrollment for the exam is still available.
@@ -171,10 +171,10 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 6. The result is there and the user sees it. 
 
 **Potential Issues:**
-- The user does not have an account (1.)
-- The student has not attended any exams yet (4.)
-- The student has not attended an exam for the course they selected (5.)
-- The student has attended the exam, but the results are not ready yet (6.)
+- In step 1, the student encounters difficulty logging into the system and the error occurs on the screen.
+- In step 4, the student has not attended any exams yet, so the system will notify him about that.
+- In step 5., the student has not attended an exam for the selected course so the system will show an error.
+- In step 6, the student has attended the exam, but the results are not ready yet so the system will show a notification about it.
 
 **Preconditions:**
 - Enroll for the exam
@@ -196,9 +196,9 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 8. The exam is created.
 
 **Potential issues:**
-- The user does not have a teachers account (1.)
-- The teacher does not teach any courses in that semester (3.)
-- The place, time and date combination is already taken (7.)
+- In step 1, the teacher encounters difficulty logging into the system and the error occurs on the screen.
+- In step 3, the teacher does not teach any courses in that semester so this option will not be accessible for them.
+- In step 7, the place, time and date combination is already taken so the teacher will be notified about that and encouraged to select another place, time and date.
 
 **Preconditions:**
 - Have teacher rights
@@ -224,8 +224,8 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 
 **Potential Issues:**
 
-- In step 1, the teacher encounters difficulty logging into the system.
-- In step 4, the system fails to display the correct exams, showing exams that are not yet ready for result publication.
+- In step 1, the student encounters difficulty logging into the system and the error occurs on the screen.
+- In step 4, the system fails to display the correct exams, the system is showing exams that are not ready for result publication yet.
 - In step 5, the teacher inputs incomplete or incorrect results, requiring revision.
 - In step 6, the system encounters an error during data verification, delaying the process.
 - In step 7, the teacher inadvertently publishes the wrong results, necessitating a retraction and correction.
@@ -256,9 +256,9 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 7. The student reviews the filtered list of exam terms.
 
 **Potential Issues:**
-
-1. In step 5, there are no exam terms that meet the selected filtering criteria, resulting in no exams being displayed.
-2. In step 5, the student attempts to filter exams for a subject they are not enrolled in, leading to an error message.
+- In step 1, the student encounters difficulty logging into the system and the error occurs on the screen.
+- In step 5, there are no exam terms that meet the selected filtering criteria, resulting in no exams being displayed.
+- In step 5, the student attempts to filter exams for a subject they are not enrolled in, leading to an error message.
 
 **Preconditions:**
 
@@ -283,7 +283,7 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 
 **Potential Issues**:
 
-- In step 1, the teacher encounters difficulty logging into the system.
+- In step 1, the teacher encounters difficulty logging into the system and the error occurs on the screen.
 - In step 3, the system fails to load the enrollment list due to a technical error.
 - In step 5, the system shows incorrect data, leading to the wrongful selection of a student who actually meets the prerequisites.
 - In step 6, the system fails to remove the student from the list due to a processing error.
@@ -303,7 +303,7 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 
 ### Get credit:
 
-**Detail:**
+**Happy Path**:
 
 1. The user logs into their teacher account.
 2. The system displays the homepage.
@@ -313,40 +313,48 @@ This UML diagram provides a comprehensive view of the inner workings of our syst
 6. The system shows him the student account.
 7. Teacher awards credit to the student
 
-**Alternatives:** 
+**Potential Issues**:
+- In step 1, the teacher encounters difficulty logging into the system and the error occurs on the screen.
+- In step 5, the system does not display the student which should be enrolled to the teacher's course.
+- In step 7, the student cannot see the received credit.
 
-1. Not having enough points the acquire the credit for the subject
-2. Not having submitted credit work before deadline
+**Preconditions:**
 
-**Prerequirements:**
+- The teacher teaches the subject he wants to give the credit from.
+- The subject has a prerequisite of obtaining credit
+ 
+**Postconditions:**
+-The students recieved the credit successfuly.
 
-- To meet the criteria for acquiring the credit for the subject
-- To be enrolled for the subject
+### Change exam date&time:
 
-**Postrequirements:**
+**Happy path:**
+1. The user logs into their teacher account.
+2. The system displays the homepage.
+3. The teacher clicks a button that is supposed to redirect him to a view of the courses they teach.
+4. The system redirects him to that view.
+5. The teacher clicks a button that is supposed to redirect him to a view of the exams' dates they've made.
+6. The system redirects him to that view.
+7. The teacher clicks a 'change exam' button next to the chosen exam.
+8. The system shows a view that allows the user to change place, time and date of the exam.
+9. The teacher now insert the data and confirm the changes.
+10. The system sends a notification to all the students that are enrolled on the changed exam.
+    
+**Potential issues:**
+- In step 1, the teacher encounters difficulty logging into the system and the error occurs on the screen.
+- In step 3, the teacher does not teach any courses in that semester so this option will not be accessible for them.
+- In step 7, the teacher has not made any exams' dates yet, so the page is empty.
+- In step 8, the place, time and date combination is already taken so the teacher will be notified about that and encouraged to select another place, time and date.
+- In step 10, the students do not receive any notification about exam's changes. 
 
-- Permission to be able to enroll for the exam
+**Preconditions:**
+- The teacher is teaching the course of the selected exam.
+- For changing the date, time and place the exam needs to be created.
 
-### Pass exam:
-
-**Detail:**
-
-1. Student takes the exam
-2. Teacher passes the student
-
-**Alternatives:** 
-
-1. In step 2, the teacher may not award enough points to make the student pass.
-
-**Prerequirement:**
-
-- To be enrolled for the specific exam date that you are taking
-
-**Postrequirement:**
-
-- Completing the subject and passing the exam you enrolled.
-
-
+**Postconditions:**
+- The students are notified about the change in the date and time of the exam.
+- The updated time and date should be visible in the list of exams students want to enroll in.
+  
 ## Information model
 
 ```plantuml
