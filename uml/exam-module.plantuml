@@ -23,12 +23,12 @@ class Teacher {
   name
 }
 
-Exam "*" -- "*" Student
-Exam "1" -- "*" Result
-Result "*" -- "1" Student
+Exam "*" -- "*" Student : < takes
+Exam "1" -- "*" Result : > produces
+Result "*" -- "1" Student : < recieves
 Exam "*" -- "1" Teacher : < overlooks
 Result "*" -- "1" Teacher : < grades
 Course "1" -- "*" Exam
 Teacher "*" -- "*" Course : > teaches
-Student "*" -- "*" Course
+Student "*" -- "*" Course : > studies
 @enduml

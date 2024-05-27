@@ -1,4 +1,4 @@
-@startuml UseCases1
+@startuml UseCases
 left to right direction
 actor Student as s
 actor Teacher as t
@@ -22,11 +22,12 @@ s --> VER1
 s --> SO1
 s --> SI
 
-QWL1 --> SI : <<include>>
 SI --> VEC1 : <<extend>>
+SI --> FE1 : <<extend>>
 
 t --> KSO1
 t --> PR
 t --> MED
 t --> CED
+t --> VEC1
 @enduml
